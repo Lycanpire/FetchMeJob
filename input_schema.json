@@ -12,19 +12,16 @@
         "enum": [
           "product manager",
           "project manager",
-          "program manager",
-      
+          "program manager"
         ]
       },
       "description": "List of keywords to search for in job postings."
     },
     "location": {
-  "title": "Location",
-  "type": "string",
-  "default": "India",
-  "description": "Enter the location for job search"
-}
-
+      "title": "Location",
+      "type": "string",
+      "default": "India",
+      "description": "Enter the location for job search"
     },
     "maxResults": {
       "type": "integer",
