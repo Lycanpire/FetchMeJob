@@ -25,6 +25,7 @@
       "description": "Enter the location for job search"
     },
     "maxResults": {
+      "title": "Max Results",
       "type": "integer",
       "minimum": 1,
       "maximum": 100,
@@ -32,19 +33,23 @@
       "description": "Maximum number of job postings to scrape."
     },
     "includeRecruiterInfo": {
+      "title": "Include Recruiter Info",
       "type": "boolean",
       "default": true,
       "description": "Whether to include recruiter information in the results."
     },
     "proxy": {
+      "title": "Proxy Settings",
       "type": "object",
       "properties": {
         "useProxy": {
+          "title": "Use Proxy",
           "type": "boolean",
           "default": true,
           "description": "Whether to use a proxy for requests."
         },
         "proxyUrl": {
+          "title": "Proxy URL",
           "type": "string",
           "description": "URL of the proxy server."
         }
