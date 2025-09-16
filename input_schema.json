@@ -4,6 +4,7 @@
   "schemaVersion": 1,
   "properties": {
     "keywords": {
+      "title": "Keywords",
       "type": "array",
       "items": {
         "type": "string"
