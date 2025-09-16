@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node dist/main.js",
     "build": "tsc",
+    "clean": "rm -rf dist",
     "dev": "ts-node src/main.ts",
     "test": "jest",
     "aggregate:full": "ts-node scripts/aggregateJobs.ts"
