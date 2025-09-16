@@ -45,7 +45,6 @@
         "useProxy": {
           "title": "Use Proxy",
           "type": "boolean",
-          "default": true,
           "description": "Whether to use a proxy for requests."
         },
         "proxyUrl": {
