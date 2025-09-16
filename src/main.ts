@@ -57,15 +57,34 @@ Apify.main(async () => {
     if (includeRecruiterInfo) {
         const recruiterMap = await recruiterScraper.scrape({ jobs: baseJobs, concurrency });
         finalJobs = baseJobs.map(j => {
-            const r = recruiterMap.get(j.job_url);
+            const r = recruiterMap.get(j.job_url) || {} as any;
             return {
                 ...j,
-                recruiter_name: r?.recruiter_name || null,
-                recruiter_profile_url: r?.recruiter_profile_url || null,
-                job_description: r?.job_description || j.job_description || null,
+                recruiter_name: r.recruiter_name ?? null,
+                recruiter_profile_url: r.recruiter_profile_url ?? null,
+                job_description: r.job_description ?? j.job_description ?? null,
+                job_poster_name: r.job_poster_name ?? null,
+                job_poster_title: r.job_poster_title ?? null,
+                job_poster_profile_url: r.job_poster_profile_url ?? null,
+                company_linkedin_url: r.company_linkedin_url ?? null,
+                company_id: r.company_id ?? null,
+                number_of_applications: r.number_of_applications ?? null,
+                employment_type: r.employment_type ?? null,
+                seniority_level: r.seniority_level ?? null,
+                job_function: r.job_function ?? null,
+                industries: r.industries ?? null,
+                salary: r.salary ?? null,
+                external_apply_url: r.external_apply_url ?? null,
             } as EnrichedJob;
         });
         log.info(`Enriched recruiter metadata for ${recruiterMap.size} jobs.`);
+    } else {
+        // ensure fields present as null to satisfy CSV aggregation requirement
+        finalJobs = baseJobs.map(j => ({
+            ...j,
+            recruiter_name: null,
+            recruiter_profile_url: null,
+        } as EnrichedJob));
     }
 
     // 3. Persist

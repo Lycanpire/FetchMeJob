@@ -31,4 +31,17 @@ export interface BaseJob {
 export interface EnrichedJob extends BaseJob {
     recruiter_name: string | null;
     recruiter_profile_url: string | null;
+    // Additional fields
+    company_linkedin_url?: string | null;
+    company_id?: string | null;
+    number_of_applications?: string | null;
+    employment_type?: string | null;
+    seniority_level?: string | null;
+    job_function?: string | null;
+    industries?: string | null;
+    salary?: string | null;
+    external_apply_url?: string | null;
+    job_poster_name?: string | null; // alias of recruiter_name when available
+    job_poster_title?: string | null;
+    job_poster_profile_url?: string | null; // most important: hiring manager profile URL
 }

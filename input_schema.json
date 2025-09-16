@@ -1,4 +1,5 @@
 {
+  "title": "FetchMeJob LinkedIn Jobs Scraper",
   "type": "object",
   "properties": {
     "keywords": {

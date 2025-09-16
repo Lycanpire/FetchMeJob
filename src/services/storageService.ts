@@ -22,7 +22,10 @@ export class StorageService {
         if (!fs.existsSync(outDir)) fs.mkdirSync(outDir);
         const filePath = path.join(outDir, filename);
         const header = [
-            'job_title','company_name','job_url','location','publication_date','job_description','recruiter_name','recruiter_profile_url','scraped_at','keyword'
+            'job_title','company_name','job_url','location','publication_date','job_description',
+            'recruiter_name','recruiter_profile_url','job_poster_name','job_poster_title','job_poster_profile_url',
+            'company_linkedin_url','company_id','number_of_applications','employment_type','seniority_level','job_function','industries','salary','external_apply_url',
+            'scraped_at','keyword'
         ].map(h => ({ id: h, title: h }));
         const writer = createObjectCsvWriter({ path: filePath, header });
         await writer.writeRecords(items);

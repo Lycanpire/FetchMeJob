@@ -6,7 +6,8 @@
   "scripts": {
     "start": "ts-node src/main.ts",
     "build": "tsc",
-    "test": "jest"
+    "test": "jest",
+    "aggregate:full": "ts-node scripts/aggregateJobs.ts"
   },
   "dependencies": {
     "apify": "^1.0.0",

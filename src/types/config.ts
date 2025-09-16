@@ -9,7 +9,7 @@ export interface Config {
     recruiterEndpoint: string;
   };
   default: {
-    maxResults: 50;
+    maxResults: number;
     timeout: number;
   };
 }
