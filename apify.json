@@ -1,0 +1,39 @@
+{
+  "id": "linkedin-jobs-actor",
+  "version": "0.1.0",
+  "name": "LinkedIn Jobs Actor",
+  "description": "An Apify actor for scraping LinkedIn job postings and recruiter information.",
+  "keywords": [
+    "apify",
+    "linkedin",
+    "scraping",
+    "jobs",
+    "recruiters"
+  ],
+  "main": "src/main.ts",
+  "scripts": {
+    "start": "apify run",
+    "test": "jest"
+  },
+  "apify": {
+    "actorId": "linkedin-jobs-actor",
+    "defaultKeyValueStore": true,
+    "defaultDataset": true,
+    "defaultRequestQueue": true,
+    "inputSchema": "input_schema.json"
+  },
+  "dependencies": {
+    "apify": "^1.0.0",
+    "axios": "^0.21.1",
+    "cheerio": "^1.0.0-rc.3",
+    "typescript": "^4.0.0"
+  },
+  "devDependencies": {
+    "jest": "^26.6.0",
+    "ts-jest": "^26.5.0",
+    "ts-loader": "^8.0.0"
+  },
+  "engines": {
+    "node": ">=12.0.0"
+  }
+}

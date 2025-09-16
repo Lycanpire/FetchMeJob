@@ -1,0 +1,67 @@
+# LinkedIn Job Scraper (Apify Actor)
+
+Scrapes LinkedIn job postings (guest endpoint) plus recruiter info.
+
+## Input
+- keywords (required)
+- location
+- pages (default 3)
+- concurrency (default 5)
+- minDelayMs / maxDelayMs
+- maxRetries
+- searchFilters (raw LinkedIn filter params, e.g.):
+```
+{
+  "f_TPR": "r604800",   // past week
+  "f_WRA": "1",         // remote
+  "f_E": ["2","3"],     // experience levels
+  "f_JT": "F"           // full-time
+}
+```
+
+## Output
+Dataset items + jobs.csv (KeyValueStore key: jobs.csv)
+
+## Run (locally)
+```
+npm install
+export BRIGHTDATA_USERNAME=...
+export BRIGHTDATA_PASSWORD=...
+node main.js
+```
+
+## Notes
+Use responsibly; LinkedIn may block aggressive scraping.# LinkedIn Job Scraper (Apify Actor)
+
+Scrapes LinkedIn job postings (guest endpoint) plus recruiter info.
+
+## Input
+- keywords (required)
+- location
+- pages (default 3)
+- concurrency (default 5)
+- minDelayMs / maxDelayMs
+- maxRetries
+- searchFilters (raw LinkedIn filter params, e.g.):
+```
+{
+  "f_TPR": "r604800",   // past week
+  "f_WRA": "1",         // remote
+  "f_E": ["2","3"],     // experience levels
+  "f_JT": "F"           // full-time
+}
+```
+
+## Output
+Dataset items + jobs.csv (KeyValueStore key: jobs.csv)
+
+## Run (locally)
+```
+npm install
+export BRIGHTDATA_USERNAME=...
+export BRIGHTDATA_PASSWORD=...
+node main.js
+```
+
+## Notes
+Use responsibly; LinkedIn may block aggressive scraping.
