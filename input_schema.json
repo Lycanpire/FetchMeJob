@@ -10,26 +10,15 @@
       "items": {
         "type": "string",
         "enum": [
-          "javascript",
-          "python",
-          "java",
-          "react",
-          "node.js",
-          "data science",
-          "machine learning",
-          "software engineer",
-          "frontend",
-          "backend",
-          "fullstack",
-          "devops",
-          "marketing",
-          "sales",
+          "product manager",
           "project manager"
+      
         ]
       },
       "description": "List of keywords to search for in job postings."
     },
     "location": {
+      "title": "India",
       "type": "string",
       "description": "Location to filter job postings."
     },
@@ -42,7 +31,7 @@
     },
     "includeRecruiterInfo": {
       "type": "boolean",
-      "default": false,
+      "default": true,
       "description": "Whether to include recruiter information in the results."
     },
     "proxy": {
