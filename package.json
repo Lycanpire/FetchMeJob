@@ -2,10 +2,11 @@
   "name": "linkedin-jobs-actor",
   "version": "1.0.0",
   "description": "An Apify actor for scraping LinkedIn job postings and recruiter information.",
-  "main": "src/main.ts",
+  "main": "dist/main.js",
   "scripts": {
-    "start": "ts-node src/main.ts",
+    "start": "node dist/main.js",
     "build": "tsc",
+    "dev": "ts-node src/main.ts",
     "test": "jest",
     "aggregate:full": "ts-node scripts/aggregateJobs.ts"
   },
