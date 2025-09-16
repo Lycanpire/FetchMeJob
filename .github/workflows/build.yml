@@ -1,0 +1,56 @@
+name: Build and Test
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'src/**'
+      - 'tsconfig.json'
+      - 'package.json'
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x]
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Build TypeScript
+      run: npm run build
+      
+    - name: Check if dist/main.js exists
+      run: |
+        if [ -f "dist/main.js" ]; then
+          echo "✅ dist/main.js found successfully!"
+          ls -la dist/
+        else
+          echo "❌ dist/main.js not found!"
+          ls -la dist/ || echo "dist directory does not exist"
+          exit 1
+        fi
+        
+    - name: Verify build output
+      run: |
+        echo "Build completed successfully!"
+        echo "Contents of dist directory:"
+        find dist -type f -name '*.js' | head -10
+        
+    - name: Run tests (if available)
+      run: npm test
+      continue-on-error: true
