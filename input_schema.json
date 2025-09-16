@@ -41,6 +41,7 @@
     "proxy": {
       "title": "Proxy Settings",
       "type": "object",
+      "description": "Configuration for proxy settings when making requests.",
       "properties": {
         "useProxy": {
           "title": "Use Proxy",
