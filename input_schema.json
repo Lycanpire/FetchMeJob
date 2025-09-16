@@ -6,6 +6,7 @@
     "keywords": {
       "title": "Keywords",
       "type": "array",
+      "editor": "stringlist",
       "items": {
         "type": "string"
       },
