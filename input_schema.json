@@ -8,7 +8,24 @@
       "type": "array",
       "editor": "select",
       "items": {
-        "type": "string"
+        "type": "string",
+        "enum": [
+          "javascript",
+          "python",
+          "java",
+          "react",
+          "node.js",
+          "data science",
+          "machine learning",
+          "software engineer",
+          "frontend",
+          "backend",
+          "fullstack",
+          "devops",
+          "marketing",
+          "sales",
+          "project manager"
+        ]
       },
       "description": "List of keywords to search for in job postings."
     },
